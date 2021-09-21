@@ -10,9 +10,9 @@ class ArticleController extends Controller
 {
     public function showAll() {
 
-        $articles = Article::all();
+        $articles = Article::all()->sortByDesc("created_at");
 
-        return view('articles', ['articles' => $articles]);
+        return view('/articles', ['articles' => $articles]);
     }
 
     

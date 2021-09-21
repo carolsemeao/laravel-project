@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
 
-
-
-    <body>
 
         @extends('master')
 
@@ -18,15 +7,16 @@
         @section('content')
 
 
-        <div class="container-fluid">
-            <h1 class="title">All Articles</h1>
+        <div class="container">
+            <h1 class="title">Feed</h1>
 
             <ul class="list">
             <button class="new-post"><a href="/articleCreate">Create new article</a></button>
 
+                
                 @foreach ($articles as $article)
                     <li class="list-item">
-                        <a href="/article/{{$article->id}}">{{$article->title}}</a>
+                        <h4 class="p-title"><a href="/article/{{$article->id}}">{{$article->title}}</a></h4>
                         
                         <span class="cr-by">created by {{$article->creator}}</span> 
                         
@@ -41,6 +31,3 @@
         </div>
         
         @endsection
-
-    </body>
-</html>
